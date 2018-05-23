@@ -1,7 +1,7 @@
 {
-  "name": "bs4starter",
+  "name": "purwokertojs",
   "version": "1.0.0",
-  "description": "demo alur kerja bootstrap",
+  "description": "Aplikasi Event Javascript di Purwokerto",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
