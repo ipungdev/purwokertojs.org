@@ -2,16 +2,19 @@
   "name": "purwokertojs",
   "version": "1.0.0",
   "description": "Aplikasi Event Javascript di Purwokerto",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "gulp"
+    "start": "node server.js"
   },
   "author": "ipung purwono",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "path": "^0.12.7",
     "popper.js": "^1.14.3"
   },
   "devDependencies": {
