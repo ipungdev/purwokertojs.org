@@ -16,10 +16,12 @@ app.use(express.static(path.join(__dirname, 'src')));
 //Buat route pada app.js
 var home = require('./routes/index');
 var about = require('./routes/about');
+var meetup = require('./routes/meetup');
 
 //pasang routes
 app.use('/', home);
 app.use('/abouts', about);
+app.use('/meetup', meetup);
 
 
 /* Create Server */
