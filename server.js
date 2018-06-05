@@ -17,11 +17,13 @@ app.use(express.static(path.join(__dirname, 'src')));
 var home = require('./routes/index');
 var about = require('./routes/about');
 var meetup = require('./routes/meetup');
+var register = require('./routes/register');
 
 //pasang routes
 app.use('/', home);
 app.use('/abouts', about);
 app.use('/meetup', meetup);
+app.use('/register', register);
 
 
 /* Create Server */
