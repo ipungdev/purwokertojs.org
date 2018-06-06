@@ -36,12 +36,18 @@ var meetup = require('./routes/meetup');
 var register = require('./routes/register');
 var test = require('./routes/test');
 
+//Routes buat admin dashboard
+var dashboard = require('./routes/administrator/dashboard');
+
 //pasang routes
 app.use('/', home);
 app.use('/abouts', about);
 app.use('/meetup', meetup);
 app.use('/register', register);
 app.use('/test', test);
+
+//pasang routes backend admin
+app.use('/administrator/dashboard', dashboard);
 
 
 /* Create Server */
