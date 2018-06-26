@@ -23,17 +23,17 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login Administrator</div>
       <div class="card-body">
-        <form>
+        <form class="needs-validation" method="POST" action="/administrator/login/go">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <input class="form-control" id="exampleInputEmail1" type="username" aria-describedby="emailHelp" placeholder="Enter username">
+            <input class="form-control" id="exampleInputEmail1" required name="username" type="text" aria-describedby="emailHelp" placeholder="Enter username">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+            <input class="form-control" id="exampleInputPassword1" required name="password" type="password" placeholder="Password">
           </div>
          
-          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+          <input type="submit" class="btn btn-primary btn-block" value="Login">
         </form>
         
       </div>

@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var flash = require('express-flash');
+var session = require('express-session');
 
 /* Create App */
 var app = express();
@@ -11,14 +14,18 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({secret:"rahasia12345"}));
+app.use(flash());
 
 /* panggil css js dll via path di src*/
 app.use(express.static(path.join(__dirname, 'src')));
 
 //load mongoose
+var admin = require('./models/Admin');
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;

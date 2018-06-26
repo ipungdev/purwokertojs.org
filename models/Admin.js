@@ -13,6 +13,4 @@ var AdminSchema = new Schema({
     timestamps: true
 });
 
-var Admin = mongoose.model('Admin', AdminSchema);
-
-module.exports = Admin;
+module.exports = mongoose.model('Admin', AdminSchema);
