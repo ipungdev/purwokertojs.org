@@ -29,14 +29,22 @@ app.use(express.static(path.join(__dirname, 'src')));
 
 //load mongoose
 var admin = require('./models/Admin');
-var mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
+
+/*mongoose.Promise = global.Promise;
 
 //hubungkan ke Mongodb
 mongoose.connect('mongodb://localhost/mo_purwokertojs')
   .then(() => console.log('Berhasil terhubung dengan MongoDB'))
-  .catch((err) => console.error(err));
+  .catch((err) => console.error(err));*/
+
+var mongoose = require('mongoose');
+let dev_db_url = 'mongodb://ipungdev:AllahMahaKaya9900@ds219051.mlab.com:19051/mo_purwokertojs';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 //Buat route pada app.js

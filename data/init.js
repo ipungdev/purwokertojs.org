@@ -8,8 +8,13 @@ var password = crypto.createHmac('sha256', secret)
 
 console.log("Password: " + password);
 
+//var mongoose = require('mongoose');
+let dev_db_url = 'mongodb://ipungdev:AllahMahaKaya9900@ds219051.mlab.com:19051/mo_purwokertojs';
+let mongoDB = process.env.MONGODB_URI || dev_db_url;
+mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/mo_purwokertojs');
+let db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 var Admin = require('../models/Admin');
