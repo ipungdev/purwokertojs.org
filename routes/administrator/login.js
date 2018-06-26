@@ -46,4 +46,16 @@ router.post('/go', function (req, res, next) {
   }
 });
 
+router.get('/logout', function(req, res){
+  req.session.destroy(function(err){
+  if(err){
+    console.log(err);
+  }
+  else
+  {
+    res.redirect('/administrator/login');
+  }
+});
+});
+
 module.exports = router;
