@@ -9,7 +9,7 @@
 <li>Ejs</li>
 <li>Jquery</li>
 <li>Cookie Parser</li>
-<ul>
+</ul>
 
 <h1>Front End</h1>
 <ul>
