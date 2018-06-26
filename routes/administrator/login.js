@@ -38,7 +38,9 @@ router.post('/go', function (req, res, next) {
         res.redirect('/administrator/dashboard');
       }
       else {
-        req.flash('info', 'Sepertinya akun Anda salah!');
+        //req.flash('info', 'Sepertinya akun Anda salah!');
+        req.flash('msg', 'Sepertinya akun Anda salah!');
+        res.locals.message = req.flash();
         res.redirect('/administrator/login');
       }
 

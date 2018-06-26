@@ -3,7 +3,7 @@ var Auth = {
     {
         if (!req.session.logged_in) {
             return res.redirect('login');
-            console.log("terciduk");
+            console.log("terciduk anda penyusup ya :P");
         }
 
         next();
