@@ -62,6 +62,7 @@ var test = require('./routes/test');
 
 //Routes buat admin dashboard
 var dashboard = require('./routes/administrator/dashboard');
+var tambah = require('./routes/administrator/tambahevent');
 var login = require('./routes/administrator/login');
 
 //pasang routes
@@ -73,6 +74,7 @@ app.use('/test', test);
 
 //pasang routes backend admin
 app.use('/administrator/dashboard', dashboard);
+app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
 
 
