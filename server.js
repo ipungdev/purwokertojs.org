@@ -20,7 +20,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('secret'));
  
-app.use(session({cookie: { maxAge: 60000 }}));
+//app.use(session({cookie: { maxAge: 60000 }}));
+// Express Session
+app.use(session({
+  secret: 'secret',
+  saveUninitialized: true,
+  resave: true
+}));
 
 app.use(flash());
 
