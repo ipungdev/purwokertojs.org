@@ -36,6 +36,8 @@ app.use(flash());
 /* panggil css js dll via path di src*/
 app.use(express.static(path.join(__dirname, 'src')));
 
+app.use(express.static('uploads'));
+
 //load mongoose
 var admin = require('./models/Admin');
 

@@ -1,65 +1,80 @@
 <%- include ../component/admin/header_admin.ejs %>
-<%- include ../component/admin/sidebar.ejs %>
-<%- include ../component/admin/navigation.ejs %>
-<%- include ../component/admin/breadcumbs.ejs %>
-<%- include icon_stats.ejs %>
+  <%- include ../component/admin/sidebar.ejs %>
+    <%- include ../component/admin/navigation.ejs %>
+      <%- include ../component/admin/breadcumbs.ejs %>
+        <%- include icon_stats.ejs %>
 
-      <!-- Example DataTables Card-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Events</div>
-        <div class="card-body">
-          
-          <div class="table-responsive">
-              <a class="btn btn-secondary" style="color: white" href="/administrator/tambah">Tambah Event</a><br><br>
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Judul</th>
-                  <th>Tanggal</th>
-                  <th>Penyelenggara</th>
-                  <th>Tipe Event</th>
-                  <th>Waktu</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                    <th>Judul</th>
-                    <th>Tanggal</th>
-                    <th>Penyelenggara</th>
-                    <th>Tipe Event</th>
-                    <th>Waktu</th>
-                    <th>Aksi</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>MongoDB Basic</td>
-                  <td>2018-06-13</td>
-                  <td>BanyuCenter</td>
-                  <td>Free</td>
-                  <td>09.00 WIB - 12.00 WIB</td>
-                  <td>Edit | Delete</td>
-                </tr>
-                <tr>
-                    <td>MongoDB Basic</td>
-                    <td>2018-06-13</td>
-                    <td>BanyuCenter</td>
-                    <td>Free</td>
-                    <td>09.00 WIB - 12.00 WIB</td>
-                    <td>Edit | Delete</td>
-                  </tr>
-                
-              </tbody>
-            </table>
+          <!-- Example DataTables Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-table"></i> Data Events</div>
+            <div class="card-body">
+
+              <div class="table-responsive">
+                <a class="btn btn-secondary" style="color: white" href="/administrator/tambah">Tambah Event</a>
+                <br>
+                <br>
+                <% if(events.length>0) { %>
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Foto</th>
+                        <th>Judul</th>
+                        <th>Tanggal</th>
+                        <th>Penyelenggara</th>
+                        <th>Tipe Event</th>
+                        <th>Waktu</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Foto</th>
+                        <th>Judul</th>
+                        <th>Tanggal</th>
+                        <th>Penyelenggara</th>
+                        <th>Tipe Event</th>
+                        <th>Waktu</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <% for(var i=0; i<events.length;i++) { %>
+                        <tr>
+                          <td>
+                            <img src="http://localhost:3000/<%= events[i].foto%>" width="100"/>
+                          </td>
+                          <td>
+                            <%= events[i].judul%>
+                          </td>
+                          <td>
+                            <%= events[i].tanggal%>
+                          </td>
+                          <td>
+                            <%= events[i].penyelenggara%>
+                          </td>
+                          <td>
+                            <%= events[i].tipe%>
+                          </td>
+                          <td>
+                            <%= events[i].mulai%> -
+                              <%= events[i].selesai%>
+                          </td>
+                          <td>Edit | Delete</td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                  </table>
+                  <% } else { %>
+                    <div>No events found.</div>
+                    <% } %>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
-    </div>
-    </div>
-    <!-- /.container-fluid-->
- 
-    <%- include ../component/admin/footer.ejs %>
-    <%- include ../component/admin/footerjs.ejs %>
+          </div>
+          </div>
+          <!-- /.container-fluid-->
+
+          <%- include ../component/admin/footer.ejs %>
+            <%- include ../component/admin/footerjs.ejs %>
