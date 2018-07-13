@@ -9,6 +9,7 @@ var flash = require('connect-flash');
 var session = require('express-session');
 
 var multer = require('multer');
+var fs = require('fs');
 
 /* Create App */
 var app = express();
@@ -38,22 +39,22 @@ app.use(express.static(path.join(__dirname, 'src')));
 //load mongoose
 var admin = require('./models/Admin');
 
-
-/*mongoose.Promise = global.Promise;
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 //hubungkan ke Mongodb
 mongoose.connect('mongodb://localhost/mo_purwokertojs')
   .then(() => console.log('Berhasil terhubung dengan MongoDB'))
-  .catch((err) => console.error(err));*/
-
+  .catch((err) => console.error(err));
+/*
 var mongoose = require('mongoose');
 let dev_db_url = 'mongodb://ipungdev:AllahMahaKaya9900@ds219051.mlab.com:19051/mo_purwokertojs';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-console.log('MTLAB terkoneksi');
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));*/
+console.log('MongoDB terkoneksi');
 
 
 //Buat route pada app.js
@@ -65,7 +66,7 @@ var test = require('./routes/test');
 
 //Routes buat admin dashboard
 var dashboard = require('./routes/administrator/dashboard');
-var tambah = require('./routes/administrator/tambahevent');
+var tambah = require('./routes/administrator/uploadevents');
 var login = require('./routes/administrator/login');
 
 var uploadevents = require('./routes/administrator/uploadevents');

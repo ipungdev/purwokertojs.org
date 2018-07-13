@@ -1,90 +1,66 @@
 var express = require('express');
-var uploadrouter = express.Router();
-var Auth_mdw = require('../../middlewares/auth');
-
-var crypto = require('crypto');
-var secret = 'purwokertojs';
-var session_store;
-
+var router = express.Router();
+var Event = require('../../models/Event');
 var multer = require('multer');
-var app = express();
+var Auth_mdw = require('../../middlewares/auth');
+//var Image = require('./../models/image');
 
-var Schema = mongoose.Schema;
-var fs = require('fs');
-
-var eventSchema = new Schema(
-    {
-        username: String,
-        img:
-            { data: Buffer, contentType: String }
-    }
-);
-var Event = mongoose.model('User', eventSchema);
-
-var newEvent = new Event;
-
-/* GET about page. 
-//ambil tampilan render dari folder view berformat ejs
-router.get('/', function(req, res, next) {
-  res.render('backend/dashboard', { title: 'Dashboard Purwokerto Js' });
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, "uploads/");
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.originalname);
+	}
 });
 
+var upload = multer({storage: storage}).single('upl');
+
+// var upload = multer({dest: 'uploads/'});
+
+/* GET home page. */
 router.get('/', Auth_mdw.check_login, Auth_mdw.is_admin, function(req, res, next) {
-  session_store = req.session;
-  res.render('backend/tambahevent', { session_store:session_store });
-});*/
-
-
-uploadrouter.get('/', Auth_mdw.check_login, Auth_mdw.is_admin, function (req, res, next) {
     session_store = req.session;
-    res.render('backend/tambahevent', { session_store: session_store });
+    res.render('backend/tambahevent', { session_store:session_store });
+  });
+
+router.post('/', (req, res) => {
+	upload(req, res, (err) => {
+		if (err) {
+			return res.end('error request file');
+		}
+		var data = new Event({
+            judul: req.body.judul,
+            tanggal:req.body.tanggal,
+            penyelenggara:req.body.penyelenggara,
+            tipe:req.body.tipe,
+            mulai:req.body.mulai,
+            selesai:req.body.selesai,
+            foto: req.file.originalname,
+            keterangan:req.body.keterangan
+		});
+		data.save().then((result) => {
+			res.send(result);
+		});
+		console.log(req.file);
+		res.end('upload file success');
+		console.log('success');
+	});
 });
 
-uploadrouter.post('/', multer({ dest: './uploads/' }).single('upl'), function (req, res, next) {
-
-    console.log(req.body); //form fields
-
-    console.log(req.file);
-
-    newUser.username = req.body.username;
-
-    newUser.img.data = fs.readFileSync(req.file.path);
-
-    newUser.img.contentType = req.file.mimetype;
-
-    newUser.save(function (err, newUser) {
-        if (err) throw err;
-        console.log(newUser);
-    });
-    res.redirect('/dishes/profile/' + req.body.username);
-
+router.get('/:id', (req, res) => {
+	var id = req.params.id
+	Image.findById(id).then((result) => {
+		res.render('image', {text : result.text, image : result.image});
+	}).catch((e) =>  res.send(e) );
 });
 
-
-dishRouter.get('/profile/:userid/picture', function (req, res) {
-    User.findById({ '_id': req.params.userid }, function (err, results) {
-        if (err) throw err;
-        res.contentType(results.img.contentType);
-        res.send(results.img.data);
-    });
+router.delete('/:id', (req, res) => {
+	Image.remove({_id: req.params.id}).then(() => {
+		res.send({message: 'delete success'});
+	}).catch((e) => {
+		res.send(e);
+	});
 });
 
-// Get profile
-dishRouter.get('/profile/:username', function (req, res) {
-    User.findOne(
-        { 'username': req.params.username },
-        function (err, results) {
-            if (err) return next(err);
-            res.render('show', {
-                username: results.username,
-                userid: results._id
-            });
-        });
-});
-
-
-app.use('/dishes', uploadrouter);
-
-module.exports = uploadrouter;
-
-//module.exports = router;
+module.exports = router;
