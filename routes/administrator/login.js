@@ -11,7 +11,7 @@ var session_store;
 /* GET login page. */
 //ambil tampilan render dari folder view berformat ejs
 
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('backend/login', { title: 'Dashboard Purwokerto Js' });
 });
 
@@ -34,13 +34,16 @@ router.post('/go', function (req, res, next) {
         session_store.email = user[0].email;
         session_store.admin = user[0].admin;
         session_store.logged_in = true;
+        req.flash("info", "Login Berhasil");
+        //res.locals.messages = req.flash();
 
         res.redirect('/administrator/dashboard');
       }
       else {
         //req.flash('info', 'Sepertinya akun Anda salah!');
-        req.flash('msg', 'Sepertinya akun Anda salah!');
-        res.locals.message = req.flash();
+        req.flash('info', 'Sepertinya akun Anda salah!');
+        //res.locals.message = req.flash();
+        
         res.redirect('/administrator/login');
       }
 
@@ -48,16 +51,15 @@ router.post('/go', function (req, res, next) {
   }
 });
 
-router.get('/logout', function(req, res){
-  req.session.destroy(function(err){
-  if(err){
-    console.log(err);
-  }
-  else
-  {
-    res.redirect('/administrator/login');
-  }
-});
+router.get('/logout', function (req, res) {
+  req.session.destroy(function (err) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.redirect('/administrator/login');
+    }
+  });
 });
 
 module.exports = router;

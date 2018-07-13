@@ -43,7 +43,8 @@ router.post('/', (req, res) => {
 			res.send(result);
 		});
 		console.log(req.file);
-		res.end('upload file success');
+        //res.end('upload file success');
+        res.redirect('http://localhost:3000/administrator/dashboard');
 		console.log('success');
 	});
 });
