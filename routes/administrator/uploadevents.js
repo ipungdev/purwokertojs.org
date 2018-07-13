@@ -18,7 +18,7 @@ var upload = multer({ storage: storage }).single('upl');
 
 // var upload = multer({dest: 'uploads/'});
 
-/* GET home page. */
+/* From tambah event */
 router.get('/', Auth_mdw.check_login, Auth_mdw.is_admin, function (req, res, next) {
     session_store = req.session;
     res.render('backend/tambahevent', { session_store: session_store });
@@ -50,20 +50,22 @@ router.post('/', (req, res) => {
     });
 });
 
+router.get('/edit/(:id)', Auth_mdw.check_login, Auth_mdw.is_admin, function(req, res, next){
+    session_store = req.session;
 
+    Event.findOne({_id:req.params.id}, function (err, row){
+        if (row)
+        {
+            console.log(row);
 
-router.get('/:id', (req, res) => {
-    var id = req.params.id
-    Image.findById(id).then((result) => {
-        res.render('image', { text: result.text, image: result.image });
-    }).catch((e) => res.send(e));
-});
-
-router.delete('/:id', (req, res) => {
-    Image.remove({ _id: req.params.id }).then(() => {
-        res.send({ message: 'delete success' });
-    }).catch((e) => {
-        res.send(e);
+           // tanggal_lahir = moment(row.tanggal_lahir).format("YYYY-MM-DD");
+            res.render('backend/editevent', { session_store:session_store, events: row});
+        }
+        else
+        {
+            req.flash('msg_error', 'Maaf, event tidak ditemukan!');
+            res.redirect('/dashboard');
+        }
     });
 });
 
