@@ -11,6 +11,7 @@
 <li>Ejs</li>
 <li>Jquery</li>
 <li>Cookie Parser</li>
+<li>Multer</li>
 </ul>
 
 <h1>Front End</h1>
@@ -21,4 +22,4 @@
 
 <h1>Database </h1>
 
-Mlab SandBox Free MongoDB
+Monggose MongoDB
