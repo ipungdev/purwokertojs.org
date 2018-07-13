@@ -24,6 +24,7 @@ router.get('/', Auth_mdw.check_login, Auth_mdw.is_admin, function (req, res, nex
     res.render('backend/tambahevent', { session_store: session_store });
 });
 
+//Post data dengan upload image dengan multer
 router.post('/', (req, res) => {
     upload(req, res, (err) => {
         if (err) {

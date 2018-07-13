@@ -33,5 +33,6 @@ Monggose MongoDB
 <li>Flash Messages ejs</li>
 <li>Web Event</li>
 <li>Fitur Pencarian Event</li>
+<li>Etc</li>
 
 </ul>
