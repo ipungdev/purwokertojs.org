@@ -20,7 +20,7 @@
 
 <h1>Database </h1>
 
-Monggose MongoDB
+Monggose MongoDB(No SQL)
 
 <h1>Fitur Utama</h1>
 <ul>
