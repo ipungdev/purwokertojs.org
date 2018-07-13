@@ -8,6 +8,8 @@ var logger = require('morgan');
 var flash = require('connect-flash');
 var session = require('express-session');
 
+var multer = require('multer');
+
 /* Create App */
 var app = express();
 
@@ -66,6 +68,8 @@ var dashboard = require('./routes/administrator/dashboard');
 var tambah = require('./routes/administrator/tambahevent');
 var login = require('./routes/administrator/login');
 
+var uploadevents = require('./routes/administrator/uploadevents');
+
 //pasang routes
 app.use('/', home);
 app.use('/abouts', about);
@@ -77,6 +81,7 @@ app.use('/test', test);
 app.use('/administrator/dashboard', dashboard);
 app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
+app.use('/administrator/uploadevents',uploadevents);
 
 
 /* Create Server */
