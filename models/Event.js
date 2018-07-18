@@ -1,4 +1,6 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
+
+
 var Schema = mongoose.Schema;
 //collection name dishes
 var eventSchema = new Schema({

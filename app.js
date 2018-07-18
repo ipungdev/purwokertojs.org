@@ -72,8 +72,10 @@ var tambah = require('./routes/administrator/uploadevents');
 var login = require('./routes/administrator/login');
 
 var uploadevents = require('./routes/administrator/uploadevents');
+//var base_url = require('./routes/base_url');
 
 //pasang routes
+//app.use('/base_url',base_url);
 app.use('/', home);
 app.use('/abouts', about);
 app.use('/meetup', meetup);
@@ -85,6 +87,7 @@ app.use('/administrator/dashboard', dashboard);
 app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
 app.use('/administrator/uploadevents',uploadevents);
+
 
 
 /* Create Server */

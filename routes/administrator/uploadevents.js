@@ -59,7 +59,19 @@ router.get('/edit/(:id)', Auth_mdw.check_login, Auth_mdw.is_admin, function(req,
             console.log(row);
 
            // tanggal_lahir = moment(row.tanggal_lahir).format("YYYY-MM-DD");
-            res.render('backend/editevent', { session_store:session_store, events: row});
+            res.render('backend/editevent', { 
+                session_store:session_store, 
+                title:"Edit Events", 
+                judul: row.judul,
+                tanggal:row.tanggal,
+                penyelenggara:row.penyelenggara,
+                tipe:row.tipe,
+                mulai:row.mulai,
+                selesai:row.selesai,
+                foto:row.foto,
+                keterangan:row.keterangan
+            });
+            
         }
         else
         {
@@ -68,5 +80,35 @@ router.get('/edit/(:id)', Auth_mdw.check_login, Auth_mdw.is_admin, function(req,
         }
     });
 });
+
+
+// SHOW EDIT USER FORM
+/*router.get('/edit/(:id)', Auth_mdw.check_login, Auth_mdw.is_admin, function(req, res, next){
+    var o_id = new ObjectId(req.params.id)
+    session_store = req.session
+    req.db.collection('events').find({"_id": o_id}).toArray(function(err, result) {
+        if(err) return console.log(err)
+
+        // if user not found
+        if (!result) {
+            req.flash('error', 'Event tidak ada dengan id = ' + req.params.id)
+            res.redirect('http://localhost:3000/administrator/dashboard')
+        }
+        else { // if user found
+            // render to views/user/edit.ejs template file
+            res.render('backend/editevent', {
+                title: 'Edit Events',
+                session_store: session_store,
+                //data: rows[0],
+                id: result[0]._id,
+                judul: result[0].judul,
+                tanggal: result[0].tanggal,
+                penyelenggara: result[0].penyelenggara,
+                mulai: result[0].mulai
+            })
+        }
+    })
+})*/
+
 
 module.exports = router;

@@ -11,18 +11,18 @@
         <div class="card-body">
             <h4>Edit Events</h4>
             <div class="card-body">
-                    <form class="needs-validation" method="POST" action="/administrator/uploadevents" enctype="multipart/form-data">
+                    <form class="needs-validation" method="POST" action="/administrator/uploadevents/update" enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Judul Events</label>
-                        <input class="form-control" id="exampleInputEmail1" required name="judul" type="text" aria-describedby="emailHelp" placeholder="Enter username">
+                        <input class="form-control" id="exampleInputEmail1" required name="judul" type="text" aria-describedby="emailHelp" placeholder="Enter Judul" value="<%= judul %>">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail1">Tanggal Events</label>
-                            <input class="form-control" id="exampleInputEmail1" required name="tanggal" type="date" aria-describedby="emailHelp" placeholder="Enter username">
+                            <input class="form-control" id="exampleInputEmail1" required name="tanggal" type="date" aria-describedby="emailHelp" placeholder="Enter Tanggal" value="<%= tanggal %>">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail1">Penyelenggara</label>
-                            <input class="form-control" id="exampleInputEmail1" required name="penyelenggara" type="text" aria-describedby="emailHelp" placeholder="Enter username">
+                            <input class="form-control" id="exampleInputEmail1" required name="penyelenggara" type="text" aria-describedby="emailHelp" placeholder="Enter Penyelenggara" value="<%= penyelenggara %>">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail1">Tipe Events</label>
@@ -35,21 +35,22 @@
                         <div class="form-row">
                           <div class="col-md-6">
                             <label for="exampleInputName">Waktu Mulai</label>
-                            <input class="form-control" name="mulai" id="exampleInputName" type="time" aria-describedby="nameHelp" placeholder="waktu mulai">
+                            <input class="form-control" name="mulai" id="exampleInputName" type="time" aria-describedby="nameHelp" placeholder="waktu mulai" value="<%= mulai %>">
                           </div>
                           <div class="col-md-6">
                             <label for="exampleInputLastName">Waktu Selesai</label>
-                            <input class="form-control" name="selesai" id="exampleInputLastName" type="time" aria-describedby="nameHelp" placeholder="waktu selesai">
+                            <input class="form-control" name="selesai" id="exampleInputLastName" type="time" aria-describedby="nameHelp" placeholder="waktu selesai" value="<%= selesai %>">
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
-                            <label for="exampleInputEmail1">Foto Events</label>
+                            <label for="exampleInputEmail1">Foto Events</label><br>
+                            <img src="http://localhost:3000/<%= foto %>" width="300"/><br><br>
                             <input class="form-control" id="exampleInputEmail1" required name="upl" type="file" aria-describedby="emailHelp" placeholder="Enter Photo">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail1">Keterangan</label>
-                            <textarea class="form-control" id="editor1" required name="keterangan" type="text" aria-describedby="emailHelp" placeholder="Enter Keterangan"></textarea>
+                            <textarea class="form-control" id="editor1" required name="keterangan" type="text" aria-describedby="emailHelp" placeholder="Enter Keterangan"><%= keterangan %></textarea>
                       </div>
                       
                      
