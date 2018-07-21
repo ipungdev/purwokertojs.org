@@ -68,10 +68,10 @@ var test = require('./routes/test');
 
 //Routes buat admin dashboard
 var dashboard = require('./routes/administrator/dashboard');
-var tambah = require('./routes/administrator/uploadevents');
+var tambah = require('./routes/administrator/events');
 var login = require('./routes/administrator/login');
 
-var uploadevents = require('./routes/administrator/uploadevents');
+var events = require('./routes/administrator/events');
 //var base_url = require('./routes/base_url');
 
 //pasang routes
@@ -86,7 +86,7 @@ app.use('/test', test);
 app.use('/administrator/dashboard', dashboard);
 app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
-app.use('/administrator/uploadevents',uploadevents);
+app.use('/administrator/events',events);
 
 
 

@@ -11,7 +11,7 @@
         <div class="card-body">
             <h4>Edit Events</h4>
             <div class="card-body">
-                    <form class="needs-validation" method="POST" action="/administrator/uploadevents/update" enctype="multipart/form-data">
+                    <form class="needs-validation" method="POST" action="/administrator/events/update/<%= id %>" enctype="multipart/form-data">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Judul Events</label>
                         <input class="form-control" id="exampleInputEmail1" required name="judul" type="text" aria-describedby="emailHelp" placeholder="Enter Judul" value="<%= judul %>">
@@ -46,7 +46,7 @@
                       <div class="form-group">
                             <label for="exampleInputEmail1">Foto Events</label><br>
                             <img src="http://localhost:3000/<%= foto %>" width="300"/><br><br>
-                            <input class="form-control" id="exampleInputEmail1" required name="upl" type="file" aria-describedby="emailHelp" placeholder="Enter Photo">
+                            <input class="form-control" id="exampleInputEmail1"  name="upl" type="file" aria-describedby="emailHelp" placeholder="Enter Photo">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail1">Keterangan</label>
@@ -54,7 +54,8 @@
                       </div>
                       
                      
-                      <input type="submit" class="btn btn-primary btn-block" value="Tambah">
+                      <input type="submit" class="btn btn-primary btn-block" value="Update">
+                      
                     </form>
                     
                   </div>

@@ -60,7 +60,8 @@
                             <%= events[i].mulai%> -
                               <%= events[i].selesai%>
                           </td>
-                          <td><a href="/administrator/uploadevents/edit/<%= events[i].id%>">Edit</a>| Delete</td>
+                          <td><a href="/administrator/uploadevents/edit/<%= events[i].id%>">Edit</a>| 
+                            <a href="/administrator/uploadevents/delete/<%= events[i].id%>">Delete</a></td>
                         </tr>
                         <% } %>
                     </tbody>
