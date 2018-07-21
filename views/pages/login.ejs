@@ -1,0 +1,68 @@
+<%- include ../component/header.ejs %>
+    <%- include ../component/menu.ejs %>
+        <section class="py-5 ">
+            <div class="container ">
+               
+                <br>
+                <h1 class="text-center">Login</h1>
+                <div class="text-center">Home / Login Member</div>
+
+            </div>
+            <br>
+            <br>
+       
+            <div class="container ">
+
+                <div class="col-lg-12 col-lg-offset-2">
+
+                    <form id="contact-form" method="post" action="contact" role="form">
+
+                        <div class="messages"></div>
+
+                        <div class="controls">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_name">Username</label>
+                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="Masukan username anda" required="required"
+                                            data-error="Firstname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="form_lastname">Password </label>
+                                        <input id="form_lastname" type="password" name="password" class="form-control" placeholder="Masukan alamat email valid" required="required"
+                                            data-error="Lastname is required.">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-send" value="Login">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="text-muted">
+                                        <strong>*</strong> These fields are required.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <!-- /.8 -->
+
+
+            </div>
+
+        </section>
+
+        <!-- /.container -->
+        <%- include ../component/footer.ejs %>

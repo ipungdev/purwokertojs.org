@@ -1,0 +1,50 @@
+<%- include ../component/admin/header_admin.ejs %>
+  <%- include ../component/admin/sidebar.ejs %>
+    <%- include ../component/admin/navigation.ejs %>
+      <%- include ../component/admin/breadcumbs.ejs %>
+        <%- include icon_stats.ejs %>
+
+          <!-- Example DataTables Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-table"></i> Data Member</div>
+            <div class="card-body">
+              <h4>Tambah Member</h4>
+              <div class="card-body">
+                <form class="needs-validation" method="post" action="/administrator/member/save" role="form">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input class="form-control" id="exampleInputEmail1" required name="username" type="text" aria-describedby="emailHelp" placeholder="Enter username">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input class="form-control" id="exampleInputEmail1" required name="email" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input class="form-control" id="exampleInputEmail1" required name="password" type="password" aria-describedby="emailHelp" placeholder="Enter password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input class="form-control" id="exampleInputEmail1" required name="phone" type="text" aria-describedby="emailHelp" placeholder="Enter phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Alamat</label>
+                    <input class="form-control" id="exampleInputEmail1" required name="alamat" type="text" aria-describedby="emailHelp" placeholder="Enter alamat">
+                  </div>
+
+                  <input type="submit" class="btn btn-primary btn-block" value="Tambah">
+                </form>
+
+              </div>
+
+
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+          </div>
+          </div>
+          <!-- /.container-fluid-->
+
+          <%- include ../component/admin/footer.ejs %>
+            <%- include ../component/admin/footerjs.ejs %>

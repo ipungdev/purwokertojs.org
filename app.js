@@ -63,8 +63,11 @@ console.log('MongoDB terkoneksi');
 var home = require('./routes/index');
 var about = require('./routes/about');
 var meetup = require('./routes/meetup');
-var register = require('./routes/register');
+var register = require('./routes/daftar');
+var contact = require('./routes/contact');
 var test = require('./routes/test');
+var loginmember = require('./routes/login');
+var selamat = require('./routes/selamat');
 
 //Routes buat admin dashboard
 var dashboard = require('./routes/administrator/dashboard');
@@ -72,6 +75,7 @@ var tambah = require('./routes/administrator/events');
 var login = require('./routes/administrator/login');
 
 var events = require('./routes/administrator/events');
+var member = require('./routes/administrator/member');
 //var base_url = require('./routes/base_url');
 
 //pasang routes
@@ -79,14 +83,19 @@ var events = require('./routes/administrator/events');
 app.use('/', home);
 app.use('/abouts', about);
 app.use('/meetup', meetup);
+app.use('/contact', contact);
 app.use('/register', register);
 app.use('/test', test);
+app.use('/login',loginmember);
+app.use('/selamat',selamat);
+
 
 //pasang routes backend admin
 app.use('/administrator/dashboard', dashboard);
 app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
 app.use('/administrator/events',events);
+app.use('/administrator/member',member);
 
 
 

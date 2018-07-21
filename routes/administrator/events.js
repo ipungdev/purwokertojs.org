@@ -54,27 +54,14 @@ router.post('/', (req, res) => {
     });
 });
 
-router.get('/edit/(:id)', Auth_mdw.check_login, Auth_mdw.is_admin, function (req, res, next) {
+//Ambil form edit
+router.get('/edit/:id',Auth_mdw.check_login, Auth_mdw.is_admin,  function (req, res) {
     session_store = req.session;
+    Event.findOne({ _id: req.params.id }, function (err, event) {
+        if (event) {
+            console.log(member);
+            res.render('backend/editevent', { session_store: session_store, event: event });
 
-    Event.findOne({ _id: req.params.id }, function (err, row) {
-        if (row) {
-            console.log(row);
-
-            // tanggal_lahir = moment(row.tanggal_lahir).format("YYYY-MM-DD");
-            res.render('backend/editevent', {
-                session_store: session_store,
-                title: "Edit Events",
-                id: row._id,
-                judul: row.judul,
-                tanggal: row.tanggal,
-                penyelenggara: row.penyelenggara,
-                tipe: row.tipe,
-                mulai: row.mulai,
-                selesai: row.selesai,
-                foto: row.foto,
-                keterangan: row.keterangan
-            });
 
         }
         else {
