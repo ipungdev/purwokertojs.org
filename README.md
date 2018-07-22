@@ -32,7 +32,7 @@ Monggose MongoDB(No SQL)
 <li>Login Super Admin</li>
 <li>Flash Messages ejs</li>
 <li>Web Event</li>
-<li>Fitur Pencarian Event</li>
+<li>Fitur Pencarian Event dengan Reg Ex untuk Judul dan Tanggal Event</li>
 <li>Etc</li>
 
 </ul>
