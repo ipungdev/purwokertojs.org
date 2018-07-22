@@ -8,6 +8,7 @@ var eventSchema = new Schema({
     tanggal: Date,
     penyelenggara: String,
     tipe: String,
+    harga:Number,
     mulai: String,
     selesai: String,
     img: { data: Buffer, contentType: String },

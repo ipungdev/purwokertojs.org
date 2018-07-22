@@ -14,7 +14,7 @@ router.get('/', Auth_mdw.check_login, Auth_mdw.is_admin, function (req, res, nex
   Event.find({}, function (err, event) {
     console.log(event);
     res.render('backend/dashboard', { session_store: session_store, events: event });
-  }).select('judul tanggal penyelenggara tipe mulai selesai foto keterangan');
+  }).select('judul tanggal penyelenggara tipe harga mulai selesai foto keterangan');
   //res.render('backend/dashboard', { session_store:session_store });
 });
 

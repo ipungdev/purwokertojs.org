@@ -39,6 +39,7 @@ router.post('/', (req, res) => {
             tanggal: req.body.tanggal,
             penyelenggara: req.body.penyelenggara,
             tipe: req.body.tipe,
+            harga: req.body.harga,
             mulai: req.body.mulai,
             selesai: req.body.selesai,
             foto: req.file.originalname,

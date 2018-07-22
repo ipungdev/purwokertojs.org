@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'src')));
 app.use(express.static('uploads'));
 
 //load mongoose
-var admin = require('./models/Admin');
+//var admin = require('./models/Admin');
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -68,6 +68,7 @@ var contact = require('./routes/contact');
 var test = require('./routes/test');
 var loginmember = require('./routes/login');
 var selamat = require('./routes/selamat');
+//var detailevent = require('./routes/index/detail');
 
 //Routes buat admin dashboard
 var dashboard = require('./routes/administrator/dashboard');
@@ -88,6 +89,8 @@ app.use('/register', register);
 app.use('/test', test);
 app.use('/login',loginmember);
 app.use('/selamat',selamat);
+app.use('/home', home);
+//app.use('/detail',detailevent);
 
 
 //pasang routes backend admin
