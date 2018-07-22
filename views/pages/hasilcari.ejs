@@ -30,6 +30,7 @@
                                                 <th>Tipe Event</th>
                                                 <th>Harga</th>
                                                 <th>Waktu</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -41,6 +42,7 @@
                                                 <th>Tipe Event</th>
                                                 <th>Harga</th>
                                                 <th>Waktu</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
@@ -68,6 +70,7 @@
                                                         <%= events[i].mulai%> -
                                                             <%= events[i].selesai%>
                                                     </td>
+                                                    <td><a class="btn btn-danger" href="/home/detail/<%= events[i].id%>">Detail</a></td>
                                                 </tr>
                                                 <% } %>
                                         </tbody>
