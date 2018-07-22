@@ -1,0 +1,48 @@
+<%- include ../component/admin/header_admin.ejs %>
+<%- include ../component/admin/sidebar.ejs %>
+<%- include ../component/admin/navigation.ejs %>
+<%- include ../component/admin/breadcumbs.ejs %>
+<%- include icon_stats.ejs %>
+
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Meetup</div>
+        <div class="card-body">
+            <h4>Tambah Meetup</h4>
+            <div class="card-body">
+                    <form class="needs-validation" method="POST" action="/administrator/meetup/save" enctype="multipart/form-data">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Judul Meetup</label>
+                        <input class="form-control" id="exampleInputEmail1" required name="judul" type="text" aria-describedby="emailHelp" placeholder="Enter judul">
+                      </div>
+                      <div class="form-group">
+                            <label for="exampleInputEmail1">Sub Deskripsi</label>
+                            <input class="form-control" id="exampleInputEmail1" required name="sub" type="text" aria-describedby="emailHelp" placeholder="Enter sub deskripsi">
+                      </div>
+                      
+                      <div class="form-group">
+                            <label for="exampleInputEmail1">Foto Events</label>
+                            <input class="form-control" id="exampleInputEmail1" required name="upl" type="file" aria-describedby="emailHelp" placeholder="Enter Photo">
+                      </div>
+                      <div class="form-group">
+                            <label for="exampleInputEmail1">Keterangan</label>
+                            <textarea class="form-control" id="editor1" required name="keterangan" type="text" aria-describedby="emailHelp" placeholder="Enter Keterangan"></textarea>
+                      </div>
+                      
+                     
+                      <input type="submit" class="btn btn-primary btn-block" value="Tambah">
+                    </form>
+                    
+                  </div>
+          
+          
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+    </div>
+    <!-- /.container-fluid-->
+ 
+    <%- include ../component/admin/footer.ejs %>
+    <%- include ../component/admin/footerjs.ejs %>

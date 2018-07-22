@@ -77,6 +77,7 @@ var login = require('./routes/administrator/login');
 
 var events = require('./routes/administrator/events');
 var member = require('./routes/administrator/member');
+var meetups = require('./routes/administrator/meetup');
 //var base_url = require('./routes/base_url');
 
 //pasang routes
@@ -99,6 +100,7 @@ app.use('/administrator/tambah', tambah);
 app.use('/administrator/login', login);
 app.use('/administrator/events',events);
 app.use('/administrator/member',member);
+app.use('/administrator/meetup',meetups);
 
 
 

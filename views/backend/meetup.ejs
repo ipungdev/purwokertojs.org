@@ -1,0 +1,66 @@
+<%- include ../component/admin/header_admin.ejs %>
+  <%- include ../component/admin/sidebar.ejs %>
+    <%- include ../component/admin/navigation.ejs %>
+      <%- include ../component/admin/breadcumbs.ejs %>
+        <%- include icon_stats.ejs %>
+
+          <!-- Example DataTables Card-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fa fa-table"></i> Data Meetup</div>
+            <div class="card-body">
+
+              <div class="table-responsive">
+                <a class="btn btn-secondary" style="color: white" href="/administrator/meetup/tambah">Tambah Meetup</a>
+                <br>
+                <br>
+                <% if(meetup.length>0) { %>
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>Judul</th>
+                        <th>Sub</th>
+                        <th>Foto</th>
+                        <th>Aksi</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                          <th>Judul</th>
+                          <th>Sub</th>
+                          <th>Foto</th>
+                          <th>Aksi</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <% for(var i=0; i<meetup.length;i++) { %>
+                        <tr>
+                          
+                          <td>
+                            <%= meetup[i].judul%>
+                          </td>
+                          <td>
+                              <%= meetup[i].sub%>
+                          </td>
+                          <td>
+                              <img src="http://localhost:3000/<%= meetup[i].foto%>" width="100"/>
+                          </td>
+                          <td><a href="/administrator/meetup/edit/<%= meetup[i].id%>">Edit</a>| 
+                            <a href="/administrator/meetup/delete/<%= meetup[i].id%>">Delete</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                  </table>
+                  <% } else { %>
+                    <div>No meetup found.</div>
+                    <% } %>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+          </div>
+          </div>
+          <!-- /.container-fluid-->
+
+          <%- include ../component/admin/footer.ejs %>
+            <%- include ../component/admin/footerjs.ejs %>

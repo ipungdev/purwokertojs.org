@@ -22,7 +22,7 @@
                 <hr>
       
                 <!-- Date/Time -->
-                <button class="btn btn-outline-danger pull-left">Waktu : <%= event.tanggal %></button> <button class="btn btn-outline-info pull-right"><%= event.tipe %></button>
+                <button class="btn btn-outline-danger pull-left">Waktu : <%= event.tanggal %></button> &nbsp<button class="btn btn-outline-info"><%= event.tipe %></button>
                 <br><br>
                
       
@@ -30,6 +30,8 @@
                 <img class="img-fluid rounded" src="http://localhost:3000/<%= event.foto %>" alt="">
       
                 <hr>
+                <button class="btn btn-outline-danger">Mulai : <%= event.mulai %></button>&nbsp<button class="btn btn-outline-info "><%= event.selesai %></button><br><br>
+
       
                 <!-- Post Content -->
                 <h3>Keterangan :</h3>
