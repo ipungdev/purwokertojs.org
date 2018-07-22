@@ -44,12 +44,13 @@ router.post('/cari/', function (req, res) {
   Event.find({ judul: new RegExp(item, 'i'), tanggal: tanggal }, function (err, event) {
     if (event) {
       console.log(event);
-      //res.render('pages/detailevent', { title: "Judul Event", event: event });
+      res.render('pages/hasilcari', { title: "Hasil Event", events: event });
     }
     else {
       console.log('Salah');
-      // req.flash('msg_error', 'Maaf, event tidak ditemukan!');
-      //res.redirect('http://localhost:3000/');
+      
+      res.render('pages/hasilcari', { title: "Hasil Event"});
+      req.flash('info', 'Maaf, event tidak ditemukan!');
     }
   });
 });

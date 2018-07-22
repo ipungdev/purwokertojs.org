@@ -1,0 +1,84 @@
+<%- include ../component/header.ejs %>
+    <%- include ../component/menu.ejs %>
+        <section class="py-5 ">
+            <div class="container ">
+                <br>
+                <h1 class="text-center">Results</h1>
+                <div class="text-center">Home / Results</div>
+            </div>
+            <br>
+            <br>
+            <div class="container ">
+                <div class="col-lg-12 col-lg-offset-2">
+                    <% if (messages.info) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <%= messages.info %>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <% } %>
+                            <div class="table-responsive">
+                                <% if(events.length>0) { %>
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Foto</th>
+                                                <th>Judul</th>
+                                                <th>Tanggal</th>
+                                                <th>Penyelenggara</th>
+                                                <th>Tipe Event</th>
+                                                <th>Harga</th>
+                                                <th>Waktu</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Foto</th>
+                                                <th>Judul</th>
+                                                <th>Tanggal</th>
+                                                <th>Penyelenggara</th>
+                                                <th>Tipe Event</th>
+                                                <th>Harga</th>
+                                                <th>Waktu</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <% for(var i=0; i<events.length;i++) { %>
+                                                <tr>
+                                                    <td>
+                                                        <img src="http://localhost:3000/<%= events[i].foto%>" width="100" />
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].judul%>
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].tanggal%>
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].penyelenggara%>
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].tipe%>
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].harga%>
+                                                    </td>
+                                                    <td>
+                                                        <%= events[i].mulai%> -
+                                                            <%= events[i].selesai%>
+                                                    </td>
+                                                </tr>
+                                                <% } %>
+                                        </tbody>
+                                    </table>
+                                    <% } else { %>
+                                        <div>No events found.</div>
+                                        <% } %>
+                            </div>
+                </div>
+                <!-- /.8 -->
+            </div>
+        </section>
+        <!-- /.container -->
+        <%- include ../component/footer.ejs %>
