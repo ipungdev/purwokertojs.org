@@ -1,0 +1,55 @@
+<%- include ../component/header.ejs %>
+    <%- include ../component/menu.ejs %>
+        <section class="py-5 ">
+            
+            <!-- Page Content -->
+    <div class="container">
+
+            <div class="row">
+      
+              <!-- Post Content Column -->
+              <div class="col-lg-12">
+      
+                <!-- Title -->
+                <h1 class="mt-4"><%= meetup.judul %></h1>
+      
+                <!-- Author -->
+                
+      
+                <hr>
+      
+                
+               
+      
+                <!-- Preview Image -->
+                <img class="img-fluid rounded" src="http://localhost:3000/<%= meetup.foto %>" alt="">
+      
+                <hr>
+
+      
+                <!-- Post Content -->
+                <h3>Keterangan :</h3>
+                <%- meetup.keterangan %>
+      
+                <hr>
+      
+                
+      
+                
+      
+              </div>
+      
+              
+      
+            </div>
+            <!-- /.row -->
+      
+          </div>
+          <!-- /.container -->
+
+            
+
+        </section>
+
+        <!-- /.container -->
+        <%- include ../component/footer.ejs %>

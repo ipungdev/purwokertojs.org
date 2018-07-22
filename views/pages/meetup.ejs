@@ -12,95 +12,28 @@
         <!-- Page Heading -->
         <section class="py-5">
             <div class="container ">
-
+                    <% if(meetup.length>0) { %>
+                        <% for(var i=0; i<meetup.length;i++) { %>
                 <div class="row">
                     <div class="col-lg-6 portfolio-item">
                         <div class="card h-100">
                             <a href="#">
-                                <img class="card-img-top" src="img/meetup.jpeg" alt="">
+                                <img class="card-img-top" src="http://localhost:3000/<%= meetup[i].foto %>" alt="">
                             </a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">Meetup Batch #6</a>
+                                    <a href="/meetup/detail/<%= meetup[i].id%>"><%= meetup[i].judul %></a>
                                 </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
-                                    pellentesque urna varius vitae.</p>
+                                <p class="card-text"><%= meetup[i].sub %></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 portfolio-item">
-                        <div class="card h-100">
-                            <a href="#">
-                                <img class="card-img-top" src="img/meetup2.jpeg" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Meetup Batch #5</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis
-                                    dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates
-                                    quae, necessitatibus unde temporibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 portfolio-item">
-                        <div class="card h-100">
-                            <a href="#">
-                                <img class="card-img-top" src="img/meetup3.png" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Meetup Batch #4</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
-                                    pellentesque urna varius vitae.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 portfolio-item">
-                        <div class="card h-100">
-                            <a href="#">
-                                <img class="card-img-top" src="img/meetup.jpeg" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Meetup Batch #3</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis
-                                    dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates
-                                    quae, necessitatibus unde temporibus.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 portfolio-item">
-                        <div class="card h-100">
-                            <a href="#">
-                                <img class="card-img-top" src="img/meetup.jpeg" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Meetup Batch #2</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
-                                    pellentesque urna varius vitae.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 portfolio-item">
-                        <div class="card h-100">
-                            <a href="#">
-                                <img class="card-img-top" src="img/meetup.jpeg" alt="">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">Meetup Batch #1</a>
-                                </h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit aliquam aperiam nulla perferendis
-                                    dolor nobis numquam, rem expedita, aliquid optio, alias illum eaque. Non magni, voluptates
-                                    quae, necessitatibus unde temporibus.</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                </div>
+                <% } %>
+                <% } else { %>
+                  <div>No meetups found.</div>
+                  <% } %>
                 </div>
                 <!-- /.row -->
 
