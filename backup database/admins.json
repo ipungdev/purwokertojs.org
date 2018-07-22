@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5b2dad6b36c96a50d3d653a6"},"username":"superadmin","email":"admin@example.com","password":"55ef20d1c916a01fc004087ac61a5a614f892f50c2730fa4048a59a7a1a9df2c","firstname":"super","lastname":"admin","admin":true,"createdAt":{"$date":{"$numberLong":"1529720171813"}},"updatedAt":{"$date":{"$numberLong":"1529720171813"}},"__v":{"$numberInt":"0"}}

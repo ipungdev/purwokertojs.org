@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5b533243e58fa4ca2371af31"},"username":"ipungdev","email":"banyustudio@gmail.com","password":"123","phone":"082113940427","alamat":"Jl. Raya Tlaga Gumelar No. 1","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b5332d9e58fa4ca2371af32"},"username":"pujiep","email":"pujipriye@gmail.com","password":"123","phone":"098765654455","alamat":"Jl. Raya Tlaga Gumelar No. 15","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b533336fdc2fccb0395a4fb"},"username":"trisetyo","email":"triesety12@gmail.com","password":"12345","phone":"098977765544","alamat":"Jl. Raya Sumpiun No. 13","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5b534577e406a6dd59ec3f4f"},"username":"geekulas","email":"geekula@gmail.com","password":"1234","phone":"82113940427","alamat":"Purworejo Distrik 12","__v":{"$numberInt":"0"}}
