@@ -11,6 +11,6 @@ var contactSchema = new Schema({
     pesan: String
 });
 
-var Contacts = mongoose.model('contact', memberSchema);
+var Contacts = mongoose.model('contact', contactSchema);
 
 module.exports = Contacts;

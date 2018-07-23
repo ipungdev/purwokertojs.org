@@ -13,8 +13,9 @@
         <section class="py-5">
             <div class="container ">
                     <% if(meetup.length>0) { %>
-                        <% for(var i=0; i<meetup.length;i++) { %>
+                        
                 <div class="row">
+                        <% for(var i=0; i<meetup.length;i++) { %>
                     <div class="col-lg-6 portfolio-item">
                         <div class="card h-100">
                             <a href="#">
@@ -28,16 +29,16 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <% } %>
                 </div>
-                <% } %>
+                
                 <% } else { %>
                   <div>No meetups found.</div>
                   <% } %>
                 </div>
                 <!-- /.row -->
 
-                <!-- Pagination -->
+                <!-- Pagination 
                 
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
@@ -61,7 +62,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </li>
-                </ul>
+                </ul>-->
             </div>
 
         </section>
